@@ -1,4 +1,4 @@
-export interface Product {
+export interface Post {
     id: string,
     name: string,
     sku: string, 
