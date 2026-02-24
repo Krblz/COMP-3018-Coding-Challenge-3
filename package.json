@@ -1,0 +1,39 @@
+{
+  "name": "comp-3018-coding-challenge-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "ts-node src/server.ts",
+    "build": "tsc",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Krblz/COMP-3018-Coding-Challenge-3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Krblz/COMP-3018-Coding-Challenge-3/issues"
+  },
+  "homepage": "https://github.com/Krblz/COMP-3018-Coding-Challenge-3#readme",
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/joi": "^17.2.2",
+    "@types/supertest": "^6.0.3",
+    "jest": "^30.2.0",
+    "supertest": "^7.2.2",
+    "ts-jest": "^29.4.6"
+  },
+  "dependencies": {
+    "joi": "^18.0.2"
+  }
+}
