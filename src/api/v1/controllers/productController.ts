@@ -3,7 +3,6 @@ import { HTTP_STATUS} from "../../../constants/httpsConstants";
 import { 
     getAllProducts,
     getProductById,
-    getHealthStatus,
     createNewProduct,
     updateOldProduct
         } from "../services/productService";

@@ -1,6 +1,15 @@
 import Joi, { ObjectSchema } from "joi";
 
 // Post operation schemas organized by request part
+
+const createProductSchema = {
+    name: "required, string, 2-80 chars",
+    sku: "required, string, pattern: /^[A-Z]{3}\\d{4}$/",
+    quantity: "required, integer, min 0",
+    price: "required, number, positive, max 2 decimals",
+    category: "required, one of: electronics, clothing, food, tools, other",
+};
+
 export const postSchemas = {
     // POST /posts - Create new post
     create: {
