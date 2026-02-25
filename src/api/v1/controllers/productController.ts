@@ -7,8 +7,7 @@ import {
     createNewProduct,
     updateOldProduct
         } from "../services/productService";
-
-
+import { successResponse } from "../models/responseModel";
 
 export const getHealthCheck = (req: Request, res: Response) => {
     let healthStatus = getHealthStatus();
@@ -16,8 +15,12 @@ export const getHealthCheck = (req: Request, res: Response) => {
 }
 
 export const getProducts = (req: Request, res: Response) => {
-    let productWithCount = getAllProducts();
-    res.status(HTTP_STATUS.OK).json(productWithCount);
+    try {
+        let productWithCount = getAllProducts();
+        res.status(HTTP_STATUS.OK).json(successResponse(productWithCount));
+    } catch (error: unknown) {
+        res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).send('Internal Server Error');
+    }
 }
 
 export const getSelectedProduct = (req: Request, res: Response) => {
