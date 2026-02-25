@@ -7,7 +7,7 @@ createDocument<T>(collectionName: string, data: T): Promise<T & { id: string }>
 getAllDocuments<T>(collectionName: string): Promise<T[]>
 
 // Gets a document by ID, returns null if not found
-getDocumentById<T>(collectionName: string, id: string): Promise<T | null>
+getDocumentById<T>(collectionName: string, id: string): Promise<T | null> 
 
 // Updates a document, returns updated data
 updateDocument<T>(collectionName: string, id: string, data: Partial<T>): Promise<T>
