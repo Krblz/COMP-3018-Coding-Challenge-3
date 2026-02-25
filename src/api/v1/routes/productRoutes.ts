@@ -7,14 +7,16 @@ import {
     updateProduct,
     deleteProduct
 } from "../controllers/productController";
+import { validateRequest } from "../middleware/validateRequest";
+import { postSchemas } from "../validation/productValidation";
 
 const router: Router = express.Router();
 
 router.get("/api/v1/health", getHealthCheck);
 router.get("/api/v1/products", getProducts);
-router.get("/api/v1/products/:id", getSelectedProduct);
-router.post("/api/v1/products", createProduct);
-router.put("/api/v1/products/:id", updateProduct);
-router.delete("/api/v1/products/:id", deleteProduct);
+router.get("/api/v1/products/:id", validateRequest(postSchemas.getById), getSelectedProduct);
+router.post("/api/v1/products", validateRequest(postSchemas.create), createProduct);
+router.put("/api/v1/products/:id", validateRequest(postSchemas.update), updateProduct);
+router.delete("/api/v1/products/:id", validateRequest(postSchemas.delete), deleteProduct);
 
 export default router;
