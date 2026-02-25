@@ -8,6 +8,8 @@ import {
     updateOldProduct
         } from "../services/productService";
 
+
+
 export const getHealthCheck = (req: Request, res: Response) => {
     let healthStatus = getHealthStatus();
     res.status(HTTP_STATUS.OK).json(healthStatus);
@@ -18,7 +20,7 @@ export const getProducts = (req: Request, res: Response) => {
     res.status(HTTP_STATUS.OK).json(productWithCount);
 }
 
-export const getSelectedProducts = (req: Request, res: Response) => {
+export const getSelectedProduct = (req: Request, res: Response) => {
     let productId = Number(req.params.id);
     let selectedProduct = getProductById(productId);
 
