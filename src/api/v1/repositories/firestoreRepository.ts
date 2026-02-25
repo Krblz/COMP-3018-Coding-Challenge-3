@@ -1,3 +1,5 @@
+import { db } from "src/config/firebaseConfig";
+
 // Creates a document, returns the created data with ID
 createDocument<T>(collectionName: string, data: T): Promise<T & { id: string }>
 
